@@ -1,0 +1,71 @@
+.errorContainer {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.errorCode {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1;
+  color: #1e88e5;
+}
+
+.errorTitle {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.errorMessage {
+  margin-bottom: 32px;
+  color: var(--gray-alpha-200);
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: #1e88e5;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navLink {
+    color: #424242;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .navLink:hover {
+    color: #1e88e5;
+  }
+  
+
+  

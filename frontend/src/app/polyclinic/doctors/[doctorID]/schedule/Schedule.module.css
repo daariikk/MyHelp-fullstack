@@ -1,0 +1,244 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .logo {
+    color: #1e88e5;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navLink {
+    color: #424242;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .navLink:hover {
+    color: #1e88e5;
+  }
+
+  .header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .doctorInfo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photoContainer {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #e3f2fd;
+  }
+  
+  .doctorPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .photoPlaceholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e3f2fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e88e5;
+  }
+  
+  .doctorDetails {
+    flex: 1;
+  }
+  
+  .doctorName {
+    color: #212121;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .specialization {
+    color: #1e88e5;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .education {
+    color: #616161;
+    margin: 0;
+  }
+  
+  .scheduleContainer {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .scheduleTitle {
+    color: #2c3e50;
+    margin-top: 0;
+  }
+  
+  .datePicker {
+    margin: 1rem 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .dateInput {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+  
+  .scheduleGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .timeSlot {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .time {
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .status {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+  }
+  
+  .bookButton {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+  
+  .unavailable {
+    opacity: 0.7;
+    background-color: #f5f5f5;
+  }
+
+  .bookButton:hover {
+    background-color: #1565c0;
+  }
+  
+  .noSlots {
+    color: #616161;
+    text-align: center;
+    grid-column: 1 / -1;
+  }
+  
+  .loading, .error {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .error {
+    color: #e74c3c;
+  }
+
+  .timeSlot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dateInput {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .submitButton {
+    padding: 8px 16px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .submitButton:hover {
+    background-color: #1565c0;
+  }
+
+  .bookButton {
+    padding: 6px 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .bookButton:hover {
+    background-color: #388e3c;
+  }
+  
+  /* form {
+    display: flex;
+    align-items: center;
+  } */

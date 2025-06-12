@@ -1,0 +1,80 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pingvin
+      POSTGRES_DB: myhelp
+      TZ: Europe/Moscow
+    ports:
+      - "5432:5432"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  migrate:
+    image: migrate/migrate:latest
+    command: ["-source", "file:///migrations", "-database", "postgres://postgres:pingvin@db:5432/myhelp?sslmode=disable", "up"]
+    volumes:
+      - ./backend/services/migrations:/migrations
+    depends_on:
+      db:
+        condition: service_healthy
+
+  account-service:
+    build:
+      context: ./backend
+      dockerfile: services/account-service/Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - migrate
+    environment:
+      TZ: Europe/Moscow
+
+  appointment-service:
+    build:
+      context: ./backend
+      dockerfile: services/appointment-service/Dockerfile
+    ports:
+      - "8085:8085"
+    depends_on:
+      - migrate
+
+  polyclinic-service:
+    build:
+      context: ./backend
+      dockerfile: services/polyclinic-service/Dockerfile
+    ports:
+      - "8084:8084"
+    depends_on:
+      - migrate
+
+  api-gateway:
+    build:
+      context: ./backend
+      dockerfile: services/api-gateway/Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - account-service
+      - appointment-service
+      - polyclinic-service
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: myhelp-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://api-gateway:8082
+      - INTERNAL_API_URL=http://api-gateway:8082
+    depends_on:
+      - api-gateway

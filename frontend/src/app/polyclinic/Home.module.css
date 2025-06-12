@@ -1,0 +1,234 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: #1e88e5;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navLink {
+    color: #424242;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .navLink:hover {
+    color: #1e88e5;
+  }
+  
+  .main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .welcomeCard {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .welcomeHeader {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1.5rem;
+  }
+  
+  .welcomeTitle {
+    color: #212121;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .welcomeSubtitle {
+    color: #616161;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .paragraph {
+    color: #424242;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  .infoSection {
+    background-color: #f5f9ff;
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  
+  .infoTitle {
+    color: #1e88e5;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .infoText {
+    color: #424242;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .headerContent {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .nav {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .welcomeCard {
+      padding: 1.5rem;
+    }
+    
+    .welcomeTitle {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .welcomeHeader {
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .welcomeTitle {
+      font-size: 1.3rem;
+    }
+    
+    .welcomeSubtitle {
+      font-size: 1rem;
+    }
+    
+    .infoSection {
+      padding: 1rem;
+    }
+  }
+
+  /* Стили для раздела специализаций */
+.specializations {
+  padding: 2rem 0;
+  background-color: #f8f9fa;
+}
+
+.specContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.specSectionTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Стили для ссылки-обертки карточки */
+.specCardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Стили для самой карточки */
+.specCard {
+  background: white;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  min-height: 120px; /* минимальная высота */
+  display: flex;
+  flex-direction: column;
+}
+
+.specDescription {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  flex-grow: 1; /* растягиваем описание, чтобы заполнить пространство */
+  overflow: hidden; /* скрываем лишний текст */
+  text-overflow: ellipsis; /* добавляем многоточие если текст обрезается */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* ограничиваем количество строк */
+  -webkit-box-orient: vertical;
+}
+
+.specCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.specTitle {
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+.specDoctor {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+
+.loading, .error, .noData {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+.error {
+  color: #e74c3c;
+}

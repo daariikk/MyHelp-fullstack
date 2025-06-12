@@ -1,0 +1,81 @@
+ /* Стили для раздела специализаций */
+ .specializations {
+    padding: 2rem 0;
+    background-color: #f8f9fa;
+  }
+  
+  .specContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .specSectionTitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Стили для ссылки-обертки карточки */
+  .specCardLink {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Стили для самой карточки */
+  .specCard {
+    background: white;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+    min-height: 120px; /* минимальная высота */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .specDescription {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    flex-grow: 1; /* растягиваем описание, чтобы заполнить пространство */
+    overflow: hidden; /* скрываем лишний текст */
+    text-overflow: ellipsis; /* добавляем многоточие если текст обрезается */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* ограничиваем количество строк */
+    -webkit-box-orient: vertical;
+  }
+  
+  .specCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .specTitle {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+  }
+  
+  .specDoctor {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  .loading, .error, .noData {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+  }
+  
+  .error {
+    color: #e74c3c;
+  }
+  

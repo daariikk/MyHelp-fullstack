@@ -1,0 +1,27 @@
+/* Стиль для текстовой кнопки "Назад" */
+.backButton {
+    /* Убираем все стили кнопки */
+    background: none;
+    border: none;
+    padding: 0;
+    
+    /* Стили текста */
+    color: #0070f3; /* Цвет как у ссылки */
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    
+    /* Позиционирование */
+    display: block;
+    margin: 20px 0 20px 20px; /* Отступы: сверху, справа, снизу, слева */
+    text-align: left;
+    
+    /* Анимация при наведении */
+    transition: color 0.2s ease;
+  }
+  
+  .backButton:hover {
+    color: #005bb5; /* Темнее при наведении */
+    text-decoration: none; 
+  }
+  
